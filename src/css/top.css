@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+#mainVitual {
+    z-index: -99;
+}
+#floatingWhite {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+}
+
+#contents {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+#kuyuriIrohaLogo {
+    display: flex;
+    width: 100%;
+    height: 45%;
+    margin-bottom: 150px;
+    padding: 0 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: var(--logo-font-size);
+    font-family: var(--logo-font);
+}
+@media screen and (max-height: 420px) {
+    #kuyuriIrohaLogo {
+        margin-bottom: 85px;
+    }
+}
+#clickToEnterTheMenu {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: flex-start;
+}
+#clickToEnterTheMenu a {
+    display: flex;
+    position: relative;
+    width: 90px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(var(--ui-font-size) + 1rem);
+    font-family: var(--ui-font);
+    overflow: visible;
+}
+#clickToEnterTheMenu a:hover {
+    text-decoration: none;
+}
+#clickToEnterTheMenu a span {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    opacity: 1;
+}
+/*
+#clickToEnterTheMenu a span:nth-child(1),
+#clickToEnterTheMenu a span:nth-child(2) {
+}
+*/
+#clickToEnterTheMenu a span:nth-child(3) {
+    font-size: calc(var(--ui-font-size) * 0.9) !important;
+}

@@ -1,0 +1,206 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: ADAM CG PRO;
+    font-style: normal;
+    font-weight: normal;
+    src: local('ADAM.CG PRO'), url('../font/ADAM.CG PRO.otf') format('opentype');
+}
+@font-face {
+    font-family: Eras Demi TIC;
+    font-style: normal;
+    font-weight: normal;
+    src: local('Eras Demi ITC'), url('../font/ERASDEMI.woff') format('woff');
+}
+
+
+html {
+    /*450px, size of change the screen layout.*/
+    --text-color: #fafafa;
+    --background-color: #0f0f0f;
+    --logo-font: 'ADAM CG PRO';
+    --ui-font: 'Eras Demi TIC';
+    --cover-z-index: 50;
+    --logo-font-size: 11rem;
+    --ui-font-size: 4rem;
+    --text-font-size: 1rem;
+    font-size: 62.5%;
+    font-style: normal;
+    font-weight: normal;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+@media screen and (max-width: 450px) {
+    html {
+        --logo-font-size: 7.48rem;
+        --ui-font-size: 2.72rem;
+        --text-font-size: 0.8rem;
+    }
+}
+@media screen and (max-height: 500px) {
+    html {
+        --logo-font-size: 6.8rem;
+        --text-font-size: 0.8rem;
+    }
+}
+body {
+    margin: 0;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+    list-style-type: none;
+}
+a:link, a:visited, a:hover, a:active {
+    color: #ffffffff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+p, h1, h2, h3, h4, h5, h6, time {
+    font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Meiryo UI',sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#back {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    --back-height: 100px;
+    max-height: 20%;
+    height: var(--back-height);
+    justify-content: center;
+    align-items: center;
+    font-family: var(--ui-font);
+    font-size: var(--ui-font-size);
+    opacity: 1;
+    z-index: 99;
+    visibility: visible;
+    transition: opacity 0.5s ease 0s,
+                visibility 0.5s ease 0s;
+}
+#back a:hover {
+    text-decoration: none;
+}
+#back a {
+    display: flex;
+    position: relative;
+    width: 80px;
+    height: 25px;
+}
+#back span:nth-child(2) {
+    font-size: calc(var(--ui-font-size) * 0.7);
+}
+.container {
+    height: calc(100% - var(--back-height));
+}
+@media screen and (max-height: 500px) {
+    .container {
+        /*20%, the same of #back max-height.*/
+        height: calc(100% - 20%);
+    }
+}
+
+.disabledSection {
+    opacity: 0 !important;
+    transform: translateX(100vw) !important;
+    visibility: hidden !important;
+}
+.lowerSection {
+    overflow: hidden !important;
+    opacity: 0.5 !important;
+    transition: opacity 0.5s ease 0.25s !important;
+}
+.disabledButton {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+#pageLoading {
+    background-color: var(--background-color);
+}
+
+.loading {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--ui-font);
+    font-size: var(--ui-font-size);
+    opacity: 1;
+    z-index: 100;
+    animation: fadeout 0.4s ease 0s 1 normal forwards;
+}
+.loadingFlag {
+    animation: fadeout paused !important;
+}
+
+.loading span {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.loading span:nth-child(1) {
+    animation: blinking 0.6s ease 0s infinite forwards;
+}
+.loading span:nth-child(2) {
+    animation: blinking 0.6s ease 0.2s infinite forwards;
+}
+.loading span:nth-child(3) {
+    animation: blinking 0.6s ease 0.4s infinite forwards;
+}
+
+.menuFirst {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.25s ease 0.25s
+}
+.menuSecond {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.25s ease 0.25s;
+}
+
+.off {
+    display: none !important;
+}
+.transparent {
+    opacity: 0 !important;
+}
+
+
+@keyframes fadeout {
+    100% {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+@keyframes blinking {
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
