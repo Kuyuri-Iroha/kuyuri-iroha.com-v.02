@@ -1,7 +1,7 @@
 # kuyuri-iroha.com-v.02
 [kuyuri-iroha.com](http://kuyuri-iroha.com) v.02のメインビジュアル部分です。  
 
-[Run on web](http://kuyuri-iroha.github.io/kuyuri-iroha.com-v.02/src)  
+[Run on web](http://kuyuri-iroha.github.io/kuyuri-iroha.com-v.02/src) (GitHubへのログインが必要です) 
 
 ![メインビジュアル](screenshot/screenshot.png "メインビジュアル")  
 
