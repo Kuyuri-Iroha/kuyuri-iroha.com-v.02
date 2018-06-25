@@ -10,4 +10,4 @@
 - ソースコードの閲覧、ダウンロード等はご自由にどうぞ。二次配布はご遠慮ください。
 
 ## ライセンス
-[Apache License 2.0](LICENSE)
+[BSD 2-Clause "Simplified" License](LICENSE)
